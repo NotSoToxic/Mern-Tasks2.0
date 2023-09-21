@@ -3,8 +3,10 @@
 <head>
   <title>Task 8 Javascript</title>
   <style>
-    body {
+     body {
       font-family: sans-serif;
+      margin: 0;
+      padding: 0;
     }
 
     h1 {
@@ -15,9 +17,13 @@
       text-align: center;
     }
 
-    form {
-      width: 500px;
+    .container {
+      width: 700px;
       margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #333;
+      background: linear-gradient(to right, #FF91AF, #FFF94C);
+      background: linear-gradient(to bottom, #FF91AF, #FFF94C)
     }
 
     .form-group {
@@ -41,97 +47,125 @@
     }
 
     input[type="submit"] {
-      background-color: #000;
+      background-color: #fb3469;
       color: #fff;
       cursor: pointer;
+      border: 1px solid black;
+      border-radius: 10px;
+    }
+
+    .form-group input[type="checkbox"]{
+      transform: scale(0.65);
+    }
+
+    .gender-group {
+      display: flex;
+      align-items: center;
+    }
+
+    .gender-group label {
+      margin-right: 5px;
+    }
+
+    .gender-group input[type="radio"] {
+      flex: initial;
+      margin-right: 5px; 
     }
   </style>
 </head>
 <body>
   <h1>Task-8</h1>
-  <center>
-    <p><h2>Registration Form</h2></p>
-  </center>
 
-  <form action="/register" method="post">
-    <div class="form-group">
-      <label>First Name</label>
-      <input type="text" name="first_name" placeholder=" Enter Your First Name"/>
-    </div>
-    <div class="form-group">
-      <label>Last Name</label>
-      <input type="text" name="last_name" placeholder=" Enter Your Last Name">
-    </div>
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" name="email" placeholder="Enter Your Email">
-    </div>
-    <div class="form-group">
-      <label>Password</label>
-      <input type="password" name="password" placeholder="Enter Password">
-    </div>
-    <div class="form-group">
-      <label>Re-enter Password</label>
-      <input type="password" name="password_confirmation" placeholder="Re-enter Password">
-    </div>
+  <div class="container">
+    <center>
+      <p><h2>Registration Form</h2></p>
+    </center>
+    <form action="/register" method="post">
 
-    <div class="form-group">
-      <label for="gen">Gender:</label>
-      <input type="radio" name="Gender" value="Male">
-      <label for="Gender">Male</label>
-      <input type="radio" name="Gender" value="Female">
-      <label for="Gender">Female</label>
-    </div>
+     <div class="form-group">
+        <label>First Name</label>
+        <input type="text" name="first_name" placeholder=" Enter Your First Name"/>
+      </div>
+      <div class="form-group">
+        <label>Last Name</label>
+        <input type="text" name="last_name" placeholder=" Enter Your Last Name">
+      </div>
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Enter Your Email">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" placeholder="Enter Password">
+      </div>
+      <div class="form-group">
+        <label>Re-enter Password</label>
+        <input type="password" name="password_confirmation" placeholder="Re-enter Password">
+      </div>
 
-    <div class="form-group">
-      <label>Age </label>
-      <input type="number" name="age" placeholder="Enter Your Age">
-    </div>
-    <div class="form-group">
-      <label>Phone Number</label>
-      <input type="tel" name="phone_number" placeholder="Enter Your Phone Number">
-    </div>
-    <div class="form-group">
-      <label>Address</label>
-      <input type="text" name="address" placeholder="Enter Your Address">
-    </div>
-    <div class="form-group">
-      <label>State</label>
-      <input type="text" name="state" placeholder="Enter Your State">
-    </div>
+      <div class="form-group gender-group">
+        <label for="gen">Gender:</label>
+        <input type="radio" name="Gender" value="Male"/>
+        <label for="Gender">Male</label>
+        <input type="radio" name="Gender" value="Female"/>
+        <label for="Gender">Female</label>
+      </div>
 
-    <div class="form-group">
-      <label>Country</label>
-      <select name="country">
-        <option value="">Choose Your country</option>
-        <option value="India">India</option>
-        <option value="United States">United States</option>
-        <option value="United Kingdom">United Kingdom</option>
-        <option value="Canada">Canada</option>
-      </select>
-    </div>
+      <br>
+      <div class="form-group">
+        <label>Age </label>
+        <input type="number" name="age" placeholder="Enter Your Age">
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone_number" placeholder="Enter Your Phone Number">
+      </div>
+      <div class="form-group">
+        <label>Address</label>
+        <input type="text" name="address" placeholder="Enter Your Address">
+      </div>
+      <div class="form-group">
+        <label>State</label>
+        <input type="text" name="state" placeholder="Enter Your State">
+      </div>
 
-    <div class="form-group">
-      <label>Languages Known</label>
-      <input type="checkbox" name="languages_known[]" value="English"> English
-      <input type="checkbox" name="languages_known[]" value="Kannada"> Kannada
-      <input type="checkbox" name="languages_known[]" value="Hindi"> Hindi
-      <input type="checkbox" name="languages_known[]" value="Telugu"> Telugu
-    </div>
+      <div class="form-group">
+        <label>Country</label>
+        <select name="country">
+          <option value="">Choose Your country</option>
+          <option value="India">India</option>
+          <option value="United States">United States</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Canada">Canada</option>
+        </select>
+      </div>
 
-    <div class="end">
-      <input type="checkbox" name="declaration" value="true">
-      <label for="declaration">I hereby declare all the given details are true</label>
-    </div>
+      <div class="form-group">
+        <label>Languages Known</label>
+        <input type="checkbox" name="language" value="English">
+        <label>English</label>
+        <input type="checkbox" name="language" value="Kannada">
+        <label>Kannada</label>
+        <input type="checkbox" name="language" value="Hindi">
+        <label>Hindi</label>
+        <input type="checkbox" name="language" value="Telugu">
+        <label>Telugu</label>
+      </div>
 
-    <div class="end" id="right" align="right">
-      Log in to <a href="https://ethnus.com">Ethnus</a> Website
-    </div>
+      <div class="end">
+        <input type="checkbox" name="declaration" value="true">
+        <label for="declaration">I hereby declare all the given details are true</label>
+      </div>
 
-    <div class="form-group">
-      <input type="submit" value="Register">
-    </div>
-  </form>
+      <div class="end" id="right" align="right">
+        Log in to <a href="https://ethnus.com">Ethnus</a> Website
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Register">
+      </div>
+    </form>
+  </div>
   <script>
     const form = document.querySelector("form");
 
