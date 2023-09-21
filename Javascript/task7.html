@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 7 Javascript</title>
+    <style>
+        #myimg {
+            position: relative;
+            left: 50px;
+            transition: left 0.5s ease; /* Add smooth animation with a 0.5s duration */
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <img id="myimg" src="Train.jpg" />
+        <center>
+            <p>Click the below button to move the image right</p>
+            <button id="startButton">Start</button>
+            <button id="stopButton">Stop</button>
+        </center>
+    </form>
+
+    <script type="text/javascript">
+        var img = null;
+        var isMoving = false;
+        var currentLeft = 50; // Initial left position
+
+        function init() {
+            img = document.getElementById('myimg');
+            img.style.left = currentLeft + 'px'; // Set the initial left position
+
+            // Add event listeners to the start and stop buttons
+            document.getElementById('startButton').addEventListener('click', startMoving);
+            document.getElementById('stopButton').addEventListener('click', stopMoving);
+        }
+
+        function startMoving() {
+            if (!isMoving) {
+                isMoving = true;
+                currentLeft += 150; // Set the final left position
+                img.style.left = currentLeft + 'px'; // Apply the new left position
+            }
+        }
+
+        function stopMoving() {
+            if (isMoving) {
+                isMoving = false;
+                img.style.left = currentLeft + 'px'; // Reset to the initial left position
+            }
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>

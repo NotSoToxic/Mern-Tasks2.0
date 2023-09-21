@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 5 Javascript</title>
+    <style>
+        #contact label {
+            display: inline-block;
+            width: 100px;
+            text-align: right;
+        }
+        #contact_submit {
+            padding-left: 100px;
+        }
+        #contact div {
+            margin-top: 1em;
+        }
+        textarea {
+            vertical-align: top;
+            height: 5em;
+        }
+        .error {
+            display: none;
+            margin-left: 10px;
+        }
+        .error_show {
+            color: red;
+            margin-left: 10px;
+        }
+        input.invalid,
+        textarea.invalid {
+            border: 2px solid red;
+        }
+        input.valid,
+        textarea.valid {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container" align = "center">
+        <header class="header-container">
+          <h1>Task-5</h1>
+        </header>
+
+    <form id="contact" method="post" action="">
+
+        <div>
+            <label for="contact_name">Name:</label>
+            <input type="text" id="contact_name" name="name">
+            <span class="error">This field is required</span>
+        </div>
+        <div>
+            <label for="contact_email">Email:</label>
+            <input type="email" id="contact_email" name="email">
+            <span class="error">A valid email address is required</span>
+        </div>
+        <div>
+            <label for="contact_website">Website:</label>
+            <input type="url" id="contact_website" name="website">
+            <span class="error">A valid URL is required</span>
+        </div>
+        <div>
+            <label for="contact_message">Message:</label>
+            <textarea id="contact_message" name="message"></textarea>
+            <span class="error">This field is required</span>
+        </div>
+        <div id="contact_submit">
+            <button type="submit">Submit</button>
+        </div>
+</div>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // After Form Submitted Validation
+            document.querySelector('#contact_submit button').addEventListener('click', function (event) {
+                var form_data = Array.from(new FormData(document.getElementById('contact')));
+                var error_free = true;
+                form_data.forEach(function (item) {
+                    var element = document.getElementById('contact_' + item[0]);
+                    var valid = element.classList.contains('valid');
+                    var error_element = element.nextElementSibling;
+                    if (!valid) {
+                        error_element.classList.remove('error');
+                        error_element.classList.add('error_show');
+                        error_free = false;
+                    } else {
+                        error_element.classList.remove('error_show');
+                        error_element.classList.add('error');
+                    }
+                });
+                if (!error_free) {
+                    event.preventDefault();
+                } else {
+                    alert('No errors: Form will be submitted');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
