@@ -1,102 +1,164 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Registration Form</title>
+  <title>Task 8 Javascript</title>
   <style>
     body {
-  font-family: sans-serif;
-}
+      font-family: sans-serif;
+    }
 
-h1 {
-  text-align: center;
-}
+    h1 {
+      text-align: center;
+    }
 
-p {
-  text-align: center;
-}
+    p {
+      text-align: center;
+    }
 
-form {
-  width: 500px;
-  margin: 0 auto;
-}
+    form {
+      width: 500px;
+      margin: 0 auto;
+    }
 
-input,
-select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-}
+    .form-group {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
 
-input[type="submit"] {
-  background-color: #000;
-  color: #fff;
-  cursor: pointer;
-}
+    .form-group label {
+      flex: 1;
+      text-align: left;
+      margin-right: 10px;
+    }
 
+    .form-group input,
+    .form-group select {
+      flex: 2;
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    input[type="submit"] {
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <h1>Registration Form</h1>
-  <p>Kindly fill in this form to register.</p>
+  <h1>Task-8</h1>
+  <center>
+    <p><h2>Registration Form</h2></p>
+  </center>
 
   <form action="/register" method="post">
-    <input type="text" name="first_name" placeholder="First Name">
-    <input type="text" name="last_name" placeholder="Last Name">
-    <input type="email" name="email" placeholder="Email">
-    <input type="password" name="password" placeholder="Password">
-    <input type="password" name="password_confirmation" placeholder="Re-enter Password">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" name="first_name" placeholder=" Enter Your First Name"/>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" name="last_name" placeholder=" Enter Your Last Name">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" placeholder="Enter Your Email">
+    </div>
+    <div class="form-group">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Enter Password">
+    </div>
+    <div class="form-group">
+      <label>Re-enter Password</label>
+      <input type="password" name="password_confirmation" placeholder="Re-enter Password">
+    </div>
 
-    <input type="radio" name="gender" value="male"> Male
-    <input type="radio" name="gender" value="female"> Female
+    <div class="form-group">
+      <label for="gen">Gender:</label>
+      <input type="radio" name="Gender" value="Male">
+      <label for="Gender">Male</label>
+      <input type="radio" name="Gender" value="Female">
+      <label for="Gender">Female</label>
+    </div>
 
-    <input type="number" name="age" placeholder="Age">
-    <input type="tel" name="phone_number" placeholder="Phone Number">
-    <input type="text" name="address" placeholder="Address">
-    <input type="text" name="state" placeholder="State">
+    <div class="form-group">
+      <label>Age </label>
+      <input type="number" name="age" placeholder="Enter Your Age">
+    </div>
+    <div class="form-group">
+      <label>Phone Number</label>
+      <input type="tel" name="phone_number" placeholder="Enter Your Phone Number">
+    </div>
+    <div class="form-group">
+      <label>Address</label>
+      <input type="text" name="address" placeholder="Enter Your Address">
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" name="state" placeholder="Enter Your State">
+    </div>
 
-    <select name="country">
-      <option value="">Choose your country</option>
-      <option value="India">India</option>
-      <option value="United States">United States</option>
-      <option value="United Kingdom">United Kingdom</option>
-      <option value="Canada">Canada</option>
-    </select>
+    <div class="form-group">
+      <label>Country</label>
+      <select name="country">
+        <option value="">Choose Your country</option>
+        <option value="India">India</option>
+        <option value="United States">United States</option>
+        <option value="United Kingdom">United Kingdom</option>
+        <option value="Canada">Canada</option>
+      </select>
+    </div>
 
-    <input type="checkbox" name="languages_known[]" value="English"> English
-    <input type="checkbox" name="languages_known[]" value="Hindi"> Hindi
-    <input type="checkbox" name="languages_known[]" value="Telugu"> Telugu
+    <div class="form-group">
+      <label>Languages Known</label>
+      <input type="checkbox" name="languages_known[]" value="English"> English
+      <input type="checkbox" name="languages_known[]" value="Kannada"> Kannada
+      <input type="checkbox" name="languages_known[]" value="Hindi"> Hindi
+      <input type="checkbox" name="languages_known[]" value="Telugu"> Telugu
+    </div>
 
-    <input type="submit" value="Register">
+    <div class="end">
+      <input type="checkbox" name="declaration" value="true">
+      <label for="declaration">I hereby declare all the given details are true</label>
+    </div>
+
+    <div class="end" id="right" align="right">
+      Log in to <a href="https://ethnus.com">Ethnus</a> Website
+    </div>
+
+    <div class="form-group">
+      <input type="submit" value="Register">
+    </div>
   </form>
   <script>
     const form = document.querySelector("form");
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
 
-  const firstName = form.querySelector("input[name='first_name']");
-  const lastName = form.querySelector("input[name='last_name']");
-  const email = form.querySelector("input[name='email']");
-  const password = form.querySelector("input[name='password']");
-  const passwordConfirmation = form.querySelector("input[name='password_confirmation']");
+      const firstName = form.querySelector("input[name='first_name']");
+      const lastName = form.querySelector("input[name='last_name']");
+      const email = form.querySelector("input[name='email']");
+      const password = form.querySelector("input[name='password']");
+      const passwordConfirmation = form.querySelector("input[name='password_confirmation']");
 
-  // Validate required fields
-  if (!firstName.value || !lastName.value || !email.value || !password.value || !passwordConfirmation.value) {
-    alert("Please fill in all required fields.");
-    return;
-  }
+      // Validate required fields
+      if (!firstName.value || !lastName.value || !email.value || !password.value || !passwordConfirmation.value) {
+        alert("Please fill in all required fields.");
+        return;
+      }
 
-  // Check that passwords match
-  if (password.value !== passwordConfirmation.value) {
-    alert("Passwords do not match.");
-    return;
-  }
+      // Check that passwords match
+      if (password.value !== passwordConfirmation.value) {
+        alert("Passwords do not match.");
+        return;
+      }
 
-  // Submit the form
-  form.submit();
-});
-
+      // Submit the form
+      form.submit();
+    });
   </script>
 </body>
 </html>
