@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Task 5</title>
+    <title>Task 5 Bootstrap</title>
     
     <!-- Include Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -37,7 +37,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-user"></i> First Name</label>  
                         <div class="col-md-8">
                             <input name="first_name" placeholder="First Name" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">First Name field is required.</div>
                         </div>
                     </div>
                     
@@ -46,7 +46,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-user"></i> Last Name</label> 
                         <div class="col-md-8">
                             <input name="last_name" placeholder="Last Name" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Last Name field is required.</div>
                         </div>
                     </div>
                     
@@ -55,7 +55,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-envelope"></i> E-Mail</label>  
                         <div class="col-md-8">
                             <input name="email" placeholder="E-Mail Address" class="form-control" type="email" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Email field is required.</div>
                         </div>
                     </div>
                     
@@ -64,7 +64,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-phone"></i> Phone #</label>  
                         <div class="col-md-8">
                             <input name="phone" placeholder="(845)555-1212" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Phone # field is required.</div>
                         </div>
                     </div>
                     
@@ -73,7 +73,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-home"></i> Address</label>  
                         <div class="col-md-8">
                             <input name="address" placeholder="Address" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Address field is required.</div>
                         </div>
                     </div>
                     
@@ -82,7 +82,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-home"></i> City</label>  
                         <div class="col-md-8">
                             <input name="city" placeholder="City" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">City field is required.</div>
                         </div>
                     </div>
                     
@@ -97,7 +97,7 @@
                                 <option>Maharashtra</option>
                                 <option>Haryana</option>
                             </select>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">State field is required.</div>
                         </div>
                     </div>
                     
@@ -106,7 +106,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-home"></i> Zip Code</label>  
                         <div class="col-md-8">
                             <input name="zip" placeholder="Zip Code" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Zip Code field is required.</div>
                         </div>
                     </div>
                     
@@ -115,7 +115,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-globe"></i> Website or domain name</label>  
                         <div class="col-md-8">
                             <input name="website" placeholder="Website or domain name" class="form-control" type="text" required>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Website or domain name field is required.</div>
                         </div>
                     </div>
                     
@@ -131,7 +131,7 @@
                                 <input class="form-check-input" type="radio" name="hosting" id="hosting_no" value="no" required>
                                 <label class="form-check-label" for="hosting_no">No</label>
                             </div>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Please select hosting option.</div>
                         </div>
                     </div>
                     
@@ -140,7 +140,7 @@
                         <label class="col-md-4 col-form-label"><i class="fas fa-pencil-alt"></i> Project Description</label>
                         <div class="col-md-8">
                             <textarea class="form-control" name="comment" placeholder="Project Description" required></textarea>
-                            <div class="error-text"></div>
+                            <div class="invalid-feedback">Project Description field is required.</div>
                         </div>
                     </div>
                     
