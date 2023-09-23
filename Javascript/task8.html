@@ -197,6 +197,11 @@
   <script>
     const form = document.querySelector("form");
 
+// Function to check password strength
+function isWeakPassword(password) {
+  return password.length < 8; // Determines password Strength
+}
+
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -296,10 +301,17 @@ form.addEventListener("submit", (event) => {
     hasErrors = true;
   }
 
+  if (isWeakPassword(password.value)) {
+    document.getElementById("error-password").textContent = "Password is weak.";
+    document.getElementById("error-password").style.display = "block";
+    hasErrors = true;
+  }
+
   if (!hasErrors) {
     form.submit();
   }
 });
+
 
   </script>
   
