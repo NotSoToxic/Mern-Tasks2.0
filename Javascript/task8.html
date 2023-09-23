@@ -196,92 +196,111 @@
   </div>
   <script>
     const form = document.querySelector("form");
-  
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-  
-      // Reset error messages
-      const errorMessages = document.querySelectorAll(".error-message");
-      errorMessages.forEach((errorMessage) => {
-        errorMessage.style.display = "none";
-      });
-  
-      // Validate required fields
-      let hasErrors = false;
-  
-      const firstName = form.querySelector("input[name='first_name']");
-      const lastName = form.querySelector("input[name='last_name']");
-      const genderMale = form.querySelector("input[name='Gender'][value='Male']");
-      const genderFemale = form.querySelector("input[name='Gender'][value='Female']");
-      const age = form.querySelector("input[name='age']");
-      const phoneNumber = form.querySelector("input[name='phone_number']");
-      const address = form.querySelector("input[name='address']");
-      const state = form.querySelector("input[name='state']");
-      const country = form.querySelector("select[name='country']");
-      const languageCheckboxes = form.querySelectorAll("input[name='language']");
-      const declarationCheckbox = form.querySelector("input[name='declaration']");
-  
-      if (!firstName.value) {
-        document.getElementById("error-first-name").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!lastName.value) {
-        document.getElementById("error-last-name").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!genderMale.checked && !genderFemale.checked) {
-        document.getElementById("error-gender").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!age.value) {
-        document.getElementById("error-age").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!phoneNumber.value) {
-        document.getElementById("error-phone-number").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!address.value) {
-        document.getElementById("error-address").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!state.value) {
-        document.getElementById("error-state").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!country.value) {
-        document.getElementById("error-country").style.display = "block";
-        hasErrors = true;
-      }
-  
-      let languageChecked = false;
-      for (const checkbox of languageCheckboxes) {
-        if (checkbox.checked) {
-          languageChecked = true;
-          break;
-        }
-      }
-      if (!languageChecked) {
-        document.getElementById("error-languages").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!declarationCheckbox.checked) {
-        document.getElementById("error-declaration").style.display = "block";
-        hasErrors = true;
-      }
-  
-      if (!hasErrors) {
-        form.submit();
-      }
-    });
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  // Reset error messages
+  const errorMessages = document.querySelectorAll(".error-message");
+  errorMessages.forEach((errorMessage) => {
+    errorMessage.style.display = "none";
+  });
+
+  // Validate required fields
+  let hasErrors = false;
+
+  const firstName = form.querySelector("input[name='first_name']");
+  const lastName = form.querySelector("input[name='last_name']");
+  const genderMale = form.querySelector("input[name='Gender'][value='Male']");
+  const genderFemale = form.querySelector("input[name='Gender'][value='Female']");
+  const age = form.querySelector("input[name='age']");
+  const phoneNumber = form.querySelector("input[name='phone_number']");
+  const address = form.querySelector("input[name='address']");
+  const state = form.querySelector("input[name='state']");
+  const country = form.querySelector("select[name='country']");
+  const languageCheckboxes = form.querySelectorAll("input[name='language']");
+  const declarationCheckbox = form.querySelector("input[name='declaration']");
+  const password = form.querySelector("input[name='password']");
+  const passwordConfirmation = form.querySelector("input[name='password_confirmation']");
+
+  if (!firstName.value) {
+    document.getElementById("error-first-name").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!lastName.value) {
+    document.getElementById("error-last-name").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!genderMale.checked && !genderFemale.checked) {
+    document.getElementById("error-gender").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!age.value) {
+    document.getElementById("error-age").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!phoneNumber.value) {
+    document.getElementById("error-phone-number").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!address.value) {
+    document.getElementById("error-address").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!state.value) {
+    document.getElementById("error-state").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!country.value) {
+    document.getElementById("error-country").style.display = "block";
+    hasErrors = true;
+  }
+
+  let languageChecked = false;
+  for (const checkbox of languageCheckboxes) {
+    if (checkbox.checked) {
+      languageChecked = true;
+      break;
+    }
+  }
+  if (!languageChecked) {
+    document.getElementById("error-languages").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!declarationCheckbox.checked) {
+    document.getElementById("error-declaration").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!password.value) {
+    document.getElementById("error-password").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!passwordConfirmation.value) {
+    document.getElementById("error-password-confirmation").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (password.value !== passwordConfirmation.value) {
+    document.getElementById("error-password-confirmation").textContent = "Passwords do not match.";
+    document.getElementById("error-password-confirmation").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!hasErrors) {
+    form.submit();
+  }
+});
+
   </script>
   
 </body>
