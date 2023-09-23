@@ -15,7 +15,6 @@
         }
         #contact div {
             margin-top: 1em;
-            position: relative;
         }
         textarea {
             vertical-align: top;
@@ -24,15 +23,10 @@
         .error {
             display: none;
             margin-left: 10px;
-            position: absolute; /* Add this line */
-            top: 0; /* Adjust as needed */
-            left: 120px; /* Adjust as needed */
-            
         }
         .error_show {
             color: red;
-            margin-left: auto;
-            
+            margin-left: 10px;
         }
         input.invalid,
         textarea.invalid {
@@ -46,67 +40,64 @@
 </head>
 <body>
 
-    <div class="container" align="center">
+<div class="container" align = "center">
         <header class="header-container">
-            <h1>Task-5</h1>
+          <h1>Task-5</h1>
         </header>
-    
-        <form id="contact" method="post" action="">
-            <div>
-                <label for="contact_name">Name:</label>
-                <input type="text" id="contact_name" name="name">
-                <span class="error">This field is required</span>
-            </div>
-            <div>
-                <label for="contact_email">Email:</label>
-                <input type="email" id="contact_email" name="email">
-                <span class="error">A valid email address is required</span>
-            </div>
-            <div>
-                <label for="contact_website">Website:</label>
-                <input type="url" id="contact_website" name="website">
-                <span class="error">A valid URL is required</span>
-            </div>
-            <div>
-                <label for="contact_message">Message:</label>
-                <textarea id="contact_message" name="message"></textarea>
-                <span class="error">This field is required</span>
-            </div>
-            <div id="contact_submit">
-                <button type="submit">Submit</button>
-            </div>
-        </form>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // After Form Submitted Validation
-                document.querySelector('#contact_submit button').addEventListener('click', function (event) {
-                    var form_data = Array.from(new FormData(document.getElementById('contact')));
-                    var error_free = true;
-                    form_data.forEach(function (item) {
-                        var element = document.getElementById('contact_' + item[0]);
-                        var valid = element.classList.contains('valid');
-                        var error_element = element.nextElementSibling;
-    
-                        if (element.hasAttribute('required') && item[1].trim() === '') { // Check if the field is required and empty
-                            error_element.classList.remove('error_show');
-                            error_element.classList.add('error');
-                            error_free = false;
-                        } else if (item[1].trim() !== '' && !valid) {
-                            error_element.classList.remove('error');
-                            error_element.classList.add('error_show');
-                            error_free = false;
-                        } else {
-                            error_element.classList.remove('error_show');
-                            error_element.classList.add('error');
-                        }
-                    });
-                    if (!error_free) {
-                        event.preventDefault();
+
+    <form id="contact" method="post" action="">
+
+        <div>
+            <label for="contact_name">Name:</label>
+            <input type="text" id="contact_name" name="name">
+            <span class="error">This field is required</span>
+        </div>
+        <div>
+            <label for="contact_email">Email:</label>
+            <input type="email" id="contact_email" name="email">
+            <span class="error">A valid email address is required</span>
+        </div>
+        <div>
+            <label for="contact_website">Website:</label>
+            <input type="url" id="contact_website" name="website">
+            <span class="error">A valid URL is required</span>
+        </div>
+        <div>
+            <label for="contact_message">Message:</label>
+            <textarea id="contact_message" name="message"></textarea>
+            <span class="error">This field is required</span>
+        </div>
+        <div id="contact_submit">
+            <button type="submit">Submit</button>
+        </div>
+</div>
+    </form>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // After Form Submitted Validation
+            document.querySelector('#contact_submit button').addEventListener('click', function (event) {
+                var form_data = Array.from(new FormData(document.getElementById('contact')));
+                var error_free = true;
+                form_data.forEach(function (item) {
+                    var element = document.getElementById('contact_' + item[0]);
+                    var valid = element.classList.contains('valid');
+                    var error_element = element.nextElementSibling;
+                    if (!valid) {
+                        error_element.classList.remove('error');
+                        error_element.classList.add('error_show');
+                        error_free = false;
                     } else {
-                        alert('No errors: Form will be submitted');
+                        error_element.classList.remove('error_show');
+                        error_element.classList.add('error');
                     }
                 });
+                if (!error_free) {
+                    event.preventDefault();
+                } else {
+                    alert('No errors: Form will be submitted');
+                }
             });
-            </script>
+        });
+    </script>
 </body>
 </html>
