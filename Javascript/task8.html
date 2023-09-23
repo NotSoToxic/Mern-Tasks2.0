@@ -216,6 +216,7 @@ form.addEventListener("submit", (event) => {
 
   const firstName = form.querySelector("input[name='first_name']");
   const lastName = form.querySelector("input[name='last_name']");
+  const emailAddress = form.querySelector("input[type=email]");
   const genderMale = form.querySelector("input[name='Gender'][value='Male']");
   const genderFemale = form.querySelector("input[name='Gender'][value='Female']");
   const age = form.querySelector("input[name='age']");
@@ -235,6 +236,11 @@ form.addEventListener("submit", (event) => {
 
   if (!lastName.value) {
     document.getElementById("error-last-name").style.display = "block";
+    hasErrors = true;
+  }
+
+  if (!emailAddress.value) {
+    document.getElementById("error-email").style.display = "block";
     hasErrors = true;
   }
 
