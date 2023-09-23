@@ -9,7 +9,6 @@
         #myimg {
             position: relative;
             left: 50px;
-            transition: left 0.5s ease; /* Add smooth animation with a 0.5s duration */
         }
     </style>
 </head>
@@ -27,6 +26,8 @@
         var img = null;
         var isMoving = false;
         var currentLeft = 50; // Initial left position
+        var finalLeft = 200; // Final left position
+        var animationFrameId;
 
         function init() {
             img = document.getElementById('myimg');
@@ -40,15 +41,24 @@
         function startMoving() {
             if (!isMoving) {
                 isMoving = true;
-                currentLeft += 150; // Set the final left position
+                moveImage();
+            }
+        }
+
+        function moveImage() {
+            if (currentLeft < finalLeft) {
+                currentLeft += 1; // Increment the left position
                 img.style.left = currentLeft + 'px'; // Apply the new left position
+                animationFrameId = requestAnimationFrame(moveImage); // Request the next animation frame
+            } else {
+                stopMoving();
             }
         }
 
         function stopMoving() {
             if (isMoving) {
                 isMoving = false;
-                img.style.left = currentLeft + 'px'; // Reset to the initial left position
+                cancelAnimationFrame(animationFrameId); // Stop the animation
             }
         }
 
