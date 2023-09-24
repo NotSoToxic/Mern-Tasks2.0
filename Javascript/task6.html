@@ -158,44 +158,71 @@ input:focus {
                 <div class="overlap-text">
                     <i class="fa fa-user"></i>
                     <input type="text" placeholder="Username" class="input-1" />
+                    <div class="error-message" style="color: red;"></div>
                 </div>
                 <div class="overlap-text">
                     <i class="fa fa-lock"></i>
                 
                     <input type="password" placeholder="Password" class="input-2" />
+                    <div class="error-message" style="color: red;"></div>
                 </div>
                 <br>
                 <input type="button" value="Log in" class="btn" />
                 <br> <br>
                 <input type="checkbox" name="remember_me" value="true" class="remember-me"> Remember me
-                <a href="#">Forgot Password</a>
+                <a href="https://www.instagram.com/accounts/password/reset/" target="_blank">Forgot Password</a>
             </div>
 
         </div>
         <div class="sub-content">
             <div class="s-part">
-                Don't have an account?<a href="#">Sign up</a>
+                Don't have an account?<a href="https://www.instagram.com/accounts/emailsignup/" target="_blank">Sign up</a>
             </div>
         </div>
     </div>
+    
 
     <script>
-        // Get the username and password input fields and their parent containers
+        // Get the username and password input fields, the login button, and the error message elements
         const usernameInput = document.querySelector('.input-1');
         const passwordInput = document.querySelector('.input-2');
-        const usernameContainer = document.querySelector('.overlap-text:nth-child(1)');
-        const passwordContainer = document.querySelector('.overlap-text:nth-child(2)');
+        const loginButton = document.querySelector('.btn');
+        const errorMessages = document.querySelectorAll('.error-message');
 
-        // Create the icons
-        const usernameIcon = document.createElement('i');
-        usernameIcon.className = 'fa fa-user';
-        const passwordIcon = document.createElement('i');
-        passwordIcon.className = 'fa fa-lock';
+        // Function to display an error message under the respective field
+        function displayError(elementIndex, message) {
+            errorMessages[elementIndex].textContent = message;
+        }
 
-        // Append the icons to the input containers
-        usernameContainer.appendChild(usernameIcon);
-        passwordContainer.appendChild(passwordIcon);
+        // Function to validate the inputs
+        function validateInputs() {
+            const usernameValue = usernameInput.value.trim();
+            const passwordValue = passwordInput.value.trim();
 
+            // Clear any previous error messages
+            errorMessages.forEach((message) => {
+                message.textContent = '';
+            });
+
+            if (usernameValue === '') {
+                displayError(0, 'Please fill in the email field.');
+            }
+
+            if (passwordValue === '') {
+                displayError(1, 'Please fill in the password field.');
+            }
+
+            if (usernameValue !== '' && passwordValue !== '') {
+                // Perform your login logic here
+                // For now, we'll just log the values
+                console.log('Username:', usernameValue);
+                console.log('Password:', passwordValue);
+            }
+        }
+
+        // Add a click event listener to the login button
+        loginButton.addEventListener('click', validateInputs);
     </script>
+    
 </body>
 </html>
