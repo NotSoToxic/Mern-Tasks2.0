@@ -8,14 +8,14 @@
     <style>
         #container {
             text-align: center;
-            margin-top: 300px;
+            margin-top: 280px;
             font-weight: bold;
             color: blue;
         }
 
         #i1 {
             position: absolute;
-            left: 500px;
+            left: 100px;
             top: 150px;
             
         }
@@ -41,13 +41,13 @@
         <div id="msg"></div>
     </center>
 
-    <script type="text/javascript">
+    <script >
         var dir = 'right';
         var my_time;
 
         function reset1() {
             clearTimeout(my_time);
-            document.getElementById('i1').style.left = "500px";
+            document.getElementById('i1').style.left = "100px";
             document.getElementById('i1').style.top = "100px";
             document.getElementById("msg").innerHTML = "";
         }
@@ -60,7 +60,7 @@
             if (x >= 1000) {
                 dir = 'left';
             }
-            if (x <= 500) {
+            if (x <= 100) {
                 dir = 'right';
             }
 
