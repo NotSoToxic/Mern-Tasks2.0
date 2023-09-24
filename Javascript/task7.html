@@ -4,57 +4,94 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task 7 Javascript</title>
+    <title>Task 7 JavaScript</title>
     <style>
-        #myimg {
-            position: relative;
-            left: 50px;
-            transition: left 0.5s ease;
+        #container {
+            text-align: center;
+            margin-top: 250px;
+        }
+
+        #i1 {
+            position: absolute;
+            width: 200px; /* Set the width of the image */
+            height: auto; /* Maintain the aspect ratio */
+            left: 500px;
+            top: 100px;
         }
     </style>
 </head>
 <body>
-    <form>
-        <img id="myimg" src="Train.jpg" />
-        <center>
-            <p>Click the below button to move the image right</p>
-            <button id="startButton">Start</button>
-            <button id="stopButton">Stop</button>
-        </center>
-    </form>
+    <div id="container">
+        <img id="i1" src="..\Javascript\images\Train.jpg" />
+    </div>
+  
+    <div id="container">
+        <form>
+            <center>
+                <p>Click the below button to move the image right</p>
+                <input type="button" onClick="timer()" value="Start">
+                <input type="button" onClick="reset1()" value="Reset">
+            </center>
+        </form>
+    </div>
+
+    <center>
+        <div id="msg"></div>
+    </center>
 
     <script type="text/javascript">
-        var img = null;
-        var isMoving = false;
-        var currentLeft = 50; // Initial left position
-        var finalLeft = 200; // Final left position
+        var dir = 'right';
+        var my_time;
 
-        function init() {
-            img = document.getElementById('myimg');
-            img.style.left = currentLeft + 'px'; // Set the initial left position
+        function reset1() {
+            clearTimeout(my_time);
+            document.getElementById('i1').style.left = "500px";
+            document.getElementById('i1').style.top = "100px";
+            document.getElementById("msg").innerHTML = "";
+        }
 
-            // Add event listeners to the start and stop buttons
-            document.getElementById('startButton').addEventListener('click', startMoving);
-            document.getElementById('stopButton').addEventListener('click', stopMoving);
+        function disp() {
+            var step = 5;
+
+            var x = parseInt(document.getElementById('i1').style.left);
+
+            if (x >= 1000) {
+                dir = 'left';
+            }
+            if (x <= 500) {
+                dir = 'right';
+            }
+
+            if (dir == 'right') {
+                x = x + step;
+            } else {
+                x = x - step;
+            }
+
+            document.getElementById('i1').style.left = x + "px";
+        }
+
+        function timer() {
+            disp();
+            var x = parseInt(document.getElementById('i1').style.left);
+            document.getElementById("msg").innerHTML = "X: " + x;
+            my_time = setTimeout(timer, 10);
         }
 
         function startMoving() {
-            if (!isMoving) {
-                isMoving = true;
-                currentLeft = finalLeft; // Set the final left position
-                img.style.left = currentLeft + 'px'; // Apply the new left position
+            if (!my_time) {
+                timer(); // Start the timer
             }
         }
 
         function stopMoving() {
-            if (isMoving) {
-                isMoving = false;
-                currentLeft = 50; // Reset to the initial left position
-                img.style.left = currentLeft + 'px'; // Apply the new left position
-            }
+            clearTimeout(my_time);
+            my_time = null;
         }
 
-        window.onload = init;
+        window.onload = function () {
+            reset1(); // Reset image position on page load
+        };
     </script>
 </body>
 </html>
