@@ -3,7 +3,7 @@
 Welcome to Mern-Tasks! This project contains Bootstrap and Javascript tasks organized in a user-friendly format.
 
 
-![Background Image](https://user-images.githubusercontent.com/74038190/212750147-854a394f-fee9-4080-9770-78a4b7ece53f.gif)
+![Background Image](https://user-images.githubusercontent.com/74038190/221352975-94759904-aa4c-4032-a8ab-b546efb9c478.gif)
 
 
 ## Table of Contents :bookmark_tabs:
