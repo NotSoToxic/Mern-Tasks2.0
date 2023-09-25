@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Task 4</title>
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+    <style>
+        .card:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        .card {
+            position: relative;
+        }
+
+        .card-image-container {
+            position: relative;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0); /* Adjust the background color and opacity as needed */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .image-text {
+            color: #fff; /* Adjust text color as needed */
+            font-size: 18px; /* Adjust font size as needed */
+        }
+
+    </style>
+</head>
+<body>
+    <br>
+    <h1 class="text-center">Bootstrap Task 4</h1>
+    <hr>
+    <div class="row">
+        <div class="col-3 card">
+            <div class="card-image-container">
+                <img class="card-img-top" src="../Bootstrap/images/card1.jpeg" alt="image">
+                <div class="image-overlay">
+                    <p class="image-text">Material Card</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text"> Cards for display in portfolio style material design by Google </p>
+                <hr>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+            </div>
+        </div>
+        
+        <div class="col-3 card">
+            <div class="card-image-container">
+                <img class="card-img-top" src="../Bootstrap/images/card2.jpg" alt="image">
+                <div class="image-overlay">
+                    <p class="image-text">Material Card</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text"> Cards for display in portfolio style material design by Google </p>
+                <hr>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+            </div>
+        </div>
+
+        <div class="col-3 card">
+            <div class="card-image-container">
+                <img class="card-img-top" src="../Bootstrap/images/card3.jpeg" alt="image">
+                <div class="image-overlay">
+                    <p class="image-text">Material Card</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text"> Cards for display in portfolio style material design by Google </p>
+                <hr>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+            </div>
+        </div>
+
+        <div class="col-3 card">
+            <div class="card-image-container">
+                <img class="card-img-top" src="../Bootstrap/images/card4.jpg" alt="image">
+                <div class="image-overlay">
+                    <p class="image-text">Material Card</p>
+                </div>
+            </div>
+            <div class="card-body">
+                <p class="card-text"> Cards for display in portfolio style material design by Google </p>
+                <hr>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+                <a href="https://www.pexels.com" class="btn btn-primary">Link</a>
+            </div>
+        </div>
+        
+
+        
+
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5dSpOnl2F14L95vEgf91t6YWa9DF2t69fY93z7K3z19mN02D65STs3475uYaD/U" crossorigin="anonymous"></script>
+    
+</body>
+</html>
