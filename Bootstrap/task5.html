@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Task 5</title>
+    <title>Task 5 Bootstrap</title>
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
 </head>
@@ -11,157 +11,182 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 
+    <style>
+        /* Custom CSS for red error messages */
+        .invalid-feedback {
+            color: red;
+        }
+    </style>
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-
-
-
-
-
-<div class="card">
-<article class="card-body col-md-6 mx-auto bg-light" style="max-width: 600px;">
-	
-	<p class="divider-text">
-        <legend class="text-center">Bootstrap Task 5</legend>
-    </p>
-	<form>
-        <div class="form-group">
-            <div class="input-group">
-                <label for="last-name" class="col-md-4 control-label">First Name</label>
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                </span>
-                <input id="last-name" name="last-name" class="form-control" placeholder="First Name" type="text" required>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="input-group">
-                <label for="last-name" class="col-md-4 control-label">Last Name</label>
-                <span class="input-group-prepend">
-                    <span class="input-group-text"><i class="fa fa-user"></i></span>
-                </span>
-                <input id="last-name" name="last-name" class="form-control" placeholder="Last Name" type="text" required>
-            </div>
-        </div>
-        
-
-    <div class="form-group input-group">
-        <label class="col-md-4 control-label">E-mail</label>
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-		 </div>
-        <input name="" class="form-control" placeholder="E-mail address" type="email" required>
-    </div>
-
-    <div class="form-group input-group">
-        <label class="col-md-4 control-label">Phone#</label>
-    	<div class="input-group-prepend">
-		    <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-		</div>
-    	<input name="" class="form-control" placeholder="(845)555-1212" type="text" required>
-    </div>
-
-    <div class="form-group">
-        <div class="input-group">
-            <label for="last-name" class="col-md-4 control-label">Address</label>
-            <span class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-map-marker""></i></span>
-            </span>
-            <input id="last-name" name="last-name" class="form-control" placeholder="Address" type="text" required>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-group">
-            <label for="last-name" class="col-md-4 control-label">City</label>
-            <span class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-home"></i></span>
-            </span>
-            <input id="last-name" name="last-name" class="form-control" placeholder="City" type="text" required>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-group">
-            <label for="last-name" class="col-md-4 control-label">State</label>
-            <span class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-list-ul"></i></span>
-            </span>
-            <select class="form-control">
-                <option selected="">Please select your state</option>
-                <option>Andhra Pradesh</option>
-          <option>Arunachal Pradesh</option>
-          <option >Assam</option>
-          <option >Bihar P</option>
-          <option >Chhattisgarh</option>
-          <option >Goa</option>
-          <option >Gujarat</option>
-          <option >Haryana</option>
-          <option >Himachal Pradesh</option>
-          <option> Jharkhand</option>
-          <option >Karnataka</option>
-          <option >Kerala</option>
-          <option >Madhya Pradesh</option>
-          <option >Maharashtra</option>
-          <option >Manipur</option>
-          <option >Meghalaya</option>
-          <option> Mizoram</option>
-          <option >Nagaland</option>
-          <option >Odisha</option>
-          <option>Punjab</option>
-          <option >Rajasthan</option>
-          <option> Sikkim</option>
-          <option >Tamil Nadu</option>
-          <option >Telangana</option>
-          <option>Tripura</option>
-          <option>Uttar Pradesh</option>
-          <option>Uttarakhand</option>
-          <option>West Bengal</option>
-            </select>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-group">
-            <label for="last-name" class="col-md-4 control-label">Do you have hosting?</label>
-            <div class="col-md-4">
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="hosting" value="yes" /> Yes
-                    </label>
+    <div class="card">
+        <article class="card-body col-md-6 mx-auto bg-light" style="max-width: 600px;">
+            <p class="divider-text">
+                <legend class="text-center">Task-5</legend>
+            </p>
+            <form id="myForm">
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="first-name" class="col-md-4 control-label">First Name</label>
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </span>
+                        <input id="first-name" name="first-name" class="form-control" placeholder="First Name" type="text" required>
+                        <div class="invalid-feedback" id="first-name-error"></div>
+                    </div>
                 </div>
-                <div class="radio">
-                    <label>
-                        <input type="radio" name="hosting" value="no" /> No
-                    </label>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="last-name" class="col-md-4 control-label">Last Name</label>
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </span>
+                        <input id="last-name" name="last-name" class="form-control" placeholder="Last Name" type="text" required>
+                        <div class="invalid-feedback" id="last-name-error"></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>   
 
+                <div class="form-group input-group">
+                    <label class="col-md-4 control-label">E-mail</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input id="email" name="email" class="form-control" placeholder="E-mail address" type="email" required>
+                    <div class="invalid-feedback" id="email-error"></div>
+                </div>
 
-    <div class="form-group">
-        <div class="input-group">
-            <label for="last-name" class="col-md-4 control-label">Project Description</label>
-            <span class="input-group-prepend">
-                <span class="input-group-text"><i class="fa fa-pencil-alt"></i></span>
-            </span>
-            <textarea id="project-description" class="form-control" name="project-description" placeholder="Project Description"></textarea>
-        </div>
+                <div class="form-group input-group">
+                    <label class="col-md-4 control-label">Phone#</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <input id="phone" name="phone" class="form-control" placeholder="(845)555-1212" type="text" required>
+                    <div class="invalid-feedback" id="phone-error"></div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="address" class="col-md-4 control-label">Address</label>
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-map-marker"></i></span>
+                        </span>
+                        <input id="address" name="address" class="form-control" placeholder="Address" type="text" required>
+                        <div class="invalid-feedback" id="address-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="city" class="col-md-4 control-label">City</label>
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-home"></i></span>
+                        </span>
+                        <input id="city" name="city" class="form-control" placeholder="City" type="text" required>
+                        <div class="invalid-feedback" id="city-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="state" class="col-md-4 control-label">State</label>
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-list-ul"></i></span>
+                        </span>
+                        <select id="state" name="state" class="form-control" required>
+                            <option selected>Please select your state</option>
+                            <option>Andhra Pradesh</option>
+                            <option>Arunachal Pradesh</option>
+                            <option >Assam</option>
+                            <option >Bihar P</option>
+                            <option >Chhattisgarh</option>
+                            <option >Goa</option>
+                            <option >Gujarat</option>
+                            <option >Haryana</option>
+                            <option >Himachal Pradesh</option>
+                            <option> Jharkhand</option>
+                            <option >Karnataka</option>
+                            <option >Kerala</option>
+                            <option >Madhya Pradesh</option>
+                            <option >Maharashtra</option>
+                            <option >Manipur</option>
+                            <option >Meghalaya</option>
+                            <option> Mizoram</option>
+                            <option >Nagaland</option>
+                            <option >Odisha</option>
+                            <option>Punjab</option>
+                            <option >Rajasthan</option>
+                            <option> Sikkim</option>
+                            <option >Tamil Nadu</option>
+                            <option >Telangana</option>
+                            <option>Tripura</option>
+                            <option>Uttar Pradesh</option>
+                            <option>Uttarakhand</option>
+                            <option>West Bengal</option>
+
+                        </select>
+                        <div class="invalid-feedback" id="state-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="hosting" class="col-md-4 control-label">Do you have hosting?</label>
+                        <div class="col-md-4">
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="yes" required> Yes
+                                </label>
+                            </div>
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="hosting" value="no" required> No
+                                </label>
+                            </div>
+                        </div>
+                        <div class="invalid-feedback" id="hosting-error"></div>
+                    </div>
+                </div>   
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <label for="project-description" class="col-md-4 control-label">Project Description</label>
+                        <span class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-pencil-alt"></i></span>
+                        </span>
+                        <textarea id="project-description" name="project-description" class="form-control" placeholder="Project Description" required></textarea>
+                        <div class="invalid-feedback" id="project-description-error"></div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button type="button" class="col-md-2 btn btn-warning btn-sm btn-block mx-auto text-white" onclick="validateForm()">Send<i class="fas fa-paper-plane ml-2"></i></button>
+                </div>
+            </form>
+        </article>
     </div>
 
-    <div class="form-group">
-        <button type="submit" class="col-md-2 btn btn-warning btn-sm btn-block mx-auto text-white">Send<i class="fas fa-paper-plane ml-2"></i></button>
-    </div>
-    
-    
-    
-                                                                
-</form>
-</article>
-</div> 
-    
+    <script>
+        function validateForm() {
+            var isValid = true;
+            var inputFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+            
+            inputFields.forEach(function(field) {
+                if (!field.value) {
+                    isValid = false;
+                    field.classList.add('is-invalid');
+                    document.getElementById(field.id + "-error").textContent = "Please enter your " + field.getAttribute("placeholder") + ".";
+                } else {
+                    field.classList.remove('is-invalid');
+                    document.getElementById(field.id + "-error").textContent = "";
+                }
+            });
+
+            if (!isValid) {
+                alert("Please fill in all required fields.");
+            }
+        }
+    </script>
 </body>
 </html>
